@@ -1,0 +1,127 @@
+﻿@model IEnumerable<Contact>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main role="main">
+    <!-- Content -->
+    <article>
+        <header class="section background-dark">
+            <div class="line">
+                <h1 class="text-white margin-top-bottom-40 text-size-60 text-line-height-1">İletişime Geç</h1>
+                <p class="margin-bottom-0 text-size-16">
+                    Bizimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz. Sizlere en kısa sürede ulaşmaya çalışacağız.
+                </p>
+            </div>
+        </header>
+        <div class="section background-white">
+            <div class="line margin-bottom-60">
+                <div class="margin">
+                    <div class="s-12 m-12 l-4 margin-m-bottom">
+                        <div class="padding-2x block-bordered border-radius">
+                            <div class="float-left hide-s">
+                                <i class="icon-sli-location-pin icon3x text-primary"></i>
+                            </div>
+                            <div class="margin-left-70 margin-s-left-0 margin-bottom">
+                                <h3 class="margin-bottom-0">Adresimiz</h3>
+                                <p>
+                                    Responsive Sokak 7<br>
+                                    İstanbul / Türkiye / Avrupa
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-12 m-12 l-4 margin-m-bottom">
+                        <div class="padding-2x block-bordered border-radius">
+                            <div class="float-left hide-s">
+                                <i class="icon-sli-envelope icon3x text-primary"></i>
+                            </div>
+                            <div class="margin-left-70 margin-s-left-0 margin-bottom">
+                                <h3 class="margin-bottom-0">E-mail</h3>
+                                <p>
+                                    info@issagligiveguvenligi.com<br>
+                                    iletisim@issagligiveguvenligi.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s-12 m-12 l-4 margin-m-bottom">
+                        <div class="padding-2x block-bordered border-radius">
+                            <div class="float-left hide-s">
+                                <i class="icon-sli-phone icon3x text-primary"></i>
+                            </div>
+                            <div class="margin-left-70 margin-s-left-0">
+                                <h3 class="margin-bottom-0">Telefon Numaralarımız</h3>
+                                <p>
+                                    <span class="text-primary">Bilgi Hattı: 0800 4521 800 50</span><br>
+                                    Ofis: 0450 5896 625 16<br>
+                                    Ofis 2: 0798 6546 465 15
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line">
+                <div class="margin">
+                    <!-- Contact Form -->
+                    <div class="s-12 m-12 l-6">
+                        <h2 class="margin-bottom-10">Mesaj Bırak</h2>
+                        @using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+                        {
+                            <form name="contactForm" class="customform" method="post">
+                                <div class="line">
+                                    <div class="margin">
+                                        <div class="s-12 m-12 l-6">
+                                            @Html.TextBox("Mail",null,new{@class="required email",name="email",placeholder="Mail"})
+                                            <p class="email-error form-error">Lütfen e-posta adresinizi girin.</p>
+                                        </div>
+                                        <div class="s-12 m-12 l-6">
+                                            @Html.TextBox("Ad",null,new{@class="name",name="name",placeholder="Ad"})
+                                            <p class="name-error form-error">Lütfen adınızı girin.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="s-12">
+                                    @Html.TextBox("Soyad",null,new{@class="name",name="name",placeholder="Soyad"})
+                                    <p class="subject-error form-error">Lütfen soyadınızı girin.</p>
+                                </div>
+                                <div class="s-12">
+                                    @Html.TextArea("Mesaj",null,new {@class = "required message",name="message",rows="3",placeholder="Mesaj"})
+                                    <p class="message-error form-error">Lütfen mesajınızı girin.</p>
+                                </div>
+                                <div class="s-12"><button class="s-12 submit-form button background-primary text-white" type="submit">Mesaj Gönder</button></div>
+                            </form>
+                        }
+                    </div>
+                    <div class="s-12 m-12 l-4">
+                        <h2 class="margin-bottom-10">Çalışma Saatlerimiz</h2>
+                        <div class="s-6">
+                            <p class="text-size-16">
+                                Pazartesi<br>
+                                Salı<br>
+                                Çarşamba<br>
+                                Perşembe<br>
+                                Cuma<br>
+                                Cumartesi<br>
+                                Pazar
+                            </p>
+                        </div>
+                        <div class="s-6">
+                            <p class="text-size-16 text-strong">
+                                08.00-18.00<br>
+                                08.00-18.00<br>
+                                08.00-18.00<br>
+                                08.00-18.00<br>
+                                08.00-14.00<br>
+                                08.00-14.00<br>
+                                Kapalı
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>

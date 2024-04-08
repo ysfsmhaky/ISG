@@ -1,0 +1,37 @@
+﻿@model ISG.Models.About
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>About</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.metin1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.metin1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.metin2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.metin2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.metin3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.metin3)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

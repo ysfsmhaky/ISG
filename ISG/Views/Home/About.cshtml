@@ -1,0 +1,61 @@
+﻿@model IEnumerable<About>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main role="main">
+    <!-- Content -->
+    <article>
+        <header class="section background-dark">
+            <div class="line">
+                <h1 class="text-white margin-top-bottom-40 text-size-60 text-line-height-1">Hakkımızda</h1>
+                <p class="margin-bottom-0 text-size-16">
+                    İSG kısaltmasıyla iş hayatında yoğun olarak kullanılan iş sağlığı ve güvenliği tanımını yapacak olursak. "işyerinde işin yürütülmesi sırasında çeşitli nedenlerden kaynaklanan sağlığa zarar verebilecek koşullardan korunmak amacıyla yapılan sistemli ve bilimsel çalışmalardır" diyebiliriz.
+                </p>
+            </div>
+        </header>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                
+                <div class="section background-white">
+                    <div class="line">
+                        <h2 class="text-size-40 margin-bottom-30">İş Sağlığı Ve Güvenliği</h2>
+                        <hr class="break-small background-primary margin-bottom-30">
+                        <p>
+
+                            <p>@item.metin1</p>
+
+                        </p>
+                        <blockquote class="margin-top-bottom-20">
+                            <h3 class="text-size-20 text-line-height-1 margin-bottom-15">Çalışanları Güvenliğini Sağlamak:</h3>
+                            İş sağlığı ve güvenliği çalışmalarının ana amacını oluşturur. Çalışanları iş kazaları ve meslek hastalıklarına karsı koruyarak ruh ve beden bütünlüklerinin sağlanması amaçlanmaktadır.
+                        </blockquote>
+
+                        <div class="line margin-top-30">
+                            <div class="margin">
+                                <div class="s-12 m-6 l-6">
+                                    <img src="~/Theme/img/img-01.jpg" alt="">
+                                    <p class="margin-top-30">
+
+                                        <p>@item.metin2</p>
+
+                                    </p>
+                                </div>
+                                <div class="s-12 m-6 l-6">
+                                    <img src="~/Theme/img/img-02.jpg" alt="">
+                                    <p class="margin-top-30">
+
+                                        <p>@item.metin3</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </article>
+</main>
